@@ -21,7 +21,9 @@ docker pull ghcr.io/VDuchauffour/smee-client:latest
 docker pull VDuchauffour/smee-client:latest
 
 # Run the container
-docker run -p 3000:3000 -e WEBHOOK_PROXY_URL=https://smee.io/XXX \
+docker run \
+    -p 3000:3000 \
+    -e WEBHOOK_PROXY_URL=https://smee.io/XXX \
     smee-client:latest
 ```
 
@@ -38,5 +40,8 @@ To build the image locally:
 
 ```bash
 docker build -t smee-client .
-docker run -p 3000:3000 smee-client
+docker run \
+    -p 3000:3000 \
+    -e WEBHOOK_PROXY_URL=https://smee.io/XXX \
+    smee-client
 ```
