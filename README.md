@@ -21,7 +21,8 @@ docker pull ghcr.io/VDuchauffour/smee-client:latest
 docker pull VDuchauffour/smee-client:latest
 
 # Run the container
-docker run -p 3000:3000 ghcr.io/VDuchauffour/smee-client:latest
+docker run -p 3000:3000 -e WEBHOOK_PROXY_URL=https://smee.io/XXX \
+    smee-client:latest
 ```
 
 ### Using with Docker Compose
