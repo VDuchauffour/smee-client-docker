@@ -6,8 +6,8 @@ A Docker image for the Smee client, a webhook payload delivery service.
 
 This repository automatically builds and publishes Docker images to:
 
-- **GitHub Container Registry (GHCR)**: `ghcr.io/VDuchauffour/smee-client`
-- **Docker Hub**: `VDuchauffour/smee-client`
+- **GitHub Container Registry (GHCR)**: `ghcr.io/vduchauffour/smee-client`
+- **Docker Hub**: `vduchauffour/smee-client`
 
 ## Usage
 
@@ -15,16 +15,16 @@ This repository automatically builds and publishes Docker images to:
 
 ```bash
 # Pull from GitHub Container Registry
-docker pull ghcr.io/VDuchauffour/smee-client:latest
+docker pull ghcr.io/vduchauffour/smee-client:latest
 
 # Pull from Docker Hub
-docker pull VDuchauffour/smee-client:latest
+docker pull vduchauffour/smee-client:latest
 
 # Run the container
 docker run \
     -p 3000:3000 \
-    -e WEBHOOK_PROXY_URL=https://smee.io/XXX \
-    smee-client:latest
+    smee-client:latest \
+    --url https://smee.io/XXX
 ```
 
 ### Using with Docker Compose
@@ -32,16 +32,4 @@ docker run \
 ```bash
 export WEBHOOK_PROXY_URL=https://smee.io/XXX
 docker compose up
-```
-
-## Local Development
-
-To build the image locally:
-
-```bash
-docker build -t smee-client .
-docker run \
-    -p 3000:3000 \
-    -e WEBHOOK_PROXY_URL=https://smee.io/XXX \
-    smee-client
 ```
